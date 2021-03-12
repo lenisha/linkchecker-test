@@ -18,5 +18,7 @@ jobs:
       - name: lychee Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v1.0.4
+        with:
+          args: --verbose  *.md *.html
       - name: Fail if there were link errors
         run: exit ${{ steps.lychee.outputs.exit_code }}
