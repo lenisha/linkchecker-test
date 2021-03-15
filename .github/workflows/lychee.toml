@@ -51,7 +51,7 @@ headers = []
 ###
 # Exclude URLs from checking (supports regex)
 exclude = [
- "javascript:*"
+ "^javascript:"
 ]
 
 include = []
