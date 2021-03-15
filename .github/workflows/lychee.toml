@@ -2,7 +2,7 @@
 ### Display
 ###
 # Verbose program output
-verbose = false
+verbose = true
 
 # Show progress
 progress = false
@@ -51,6 +51,7 @@ headers = []
 ###
 # Exclude URLs from checking (supports regex)
 exclude = [
+ "javascript:*"
 ]
 
 include = []
