@@ -23,7 +23,7 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v1.0.4
         with:
-          args: --verbose  --exclude '^javascript:.*'  **/*.md **/*.html
+          args: --verbose  --exclude="^javascript:.*"  '**/*.md' '**/*.html'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Fail if there were link errors
