@@ -23,7 +23,7 @@ jobs:
       #  run: exit ${{ steps.lychee.outputs.exit_code }}
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v2
-        if: ${{ failure() }} 
+        if: ${{ steps.lychee.outputs.exit_code != 0 }} 
         with:
           title: Link Checker Report
           content-filepath: ./lychee/out.md
