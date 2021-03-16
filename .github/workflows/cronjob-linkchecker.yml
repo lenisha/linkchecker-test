@@ -17,7 +17,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@master
         with:
-          args: --exclude="^(javascript|chrome):.*"  --accept=200,403,429 "https://lenisha.github.io/linkchecker-test/**/*.html"
+          args: --exclude="^(javascript|chrome):.*"  --verbose --accept=200,403,429 "https://lenisha.github.io/linkchecker-test/"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           
