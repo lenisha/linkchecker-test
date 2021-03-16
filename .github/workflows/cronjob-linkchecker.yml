@@ -2,9 +2,9 @@ name: Mark stale issues and pull requests
 
 on:
   schedule:
-  - cron: "1 0 * * *"
+  - cron: "* * * * *"
 
-name: Check links
+name: Check links every thursday
 jobs:
   linkChecker:
     runs-on: ubuntu-latest
