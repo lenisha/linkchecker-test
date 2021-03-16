@@ -28,6 +28,6 @@ jobs:
     - name: Check
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
-        url: https://lenisha.github.io/linkchecker-test/
+        url: https://www.onnxruntime.ai/
         cmd_params: "--skip-tls-verification --color=always"  # muffet parameters
         run_timeout: 600  # maximum amount of time to run muffet (default is set to 300 seconds)
