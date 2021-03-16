@@ -1,8 +1,13 @@
 name: Find Broken Links every Thursday
 
 on:
-  schedule:
-  - cron: "*/5 * * * *"
+#  schedule:
+#  - cron: "59 23 * * 4"
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 
 jobs:
   cronLinkChecker:
