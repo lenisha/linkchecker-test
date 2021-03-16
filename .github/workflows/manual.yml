@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Manual workflow Muffet
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -19,12 +19,16 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  linkcheckmuffet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+    - name: Check
+      uses: ruzickap/action-my-broken-link-checker@v1
+      with:
+        url: https://lenisha.github.io/linkchecker-test/
+        pages_path: ./
+        cmd_params: --buffer-size=8192 --max-connections=10 --color=always --skip-tls-verification --limit-redirections=5 --timeout=20  # muffet parameters
+        run_timeout: 600  # maximum amount of time to run muffet (default is set to 300 seconds)
