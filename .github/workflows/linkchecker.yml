@@ -19,8 +19,6 @@ jobs:
           args: --exclude="^(javascript|chrome):.*"   --accept=200,403,429 "**/*.md" "**/*.html"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      #- name: Fail if there were link errors
-      #  run: exit ${{ steps.lychee.outputs.exit_code }}
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v2
         if: ${{ steps.lychee.outputs.exit_code != 0 }} 
@@ -28,3 +26,7 @@ jobs:
           title: Link Checker Report
           content-filepath: ./lychee/out.md
           labels: component:documentation
+          assignees: lenisha
+      - name: Fail if there were link errors
+        run: exit ${{ steps.lychee.outputs.exit_code }}
+     
