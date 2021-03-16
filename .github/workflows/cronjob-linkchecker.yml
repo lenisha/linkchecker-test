@@ -2,17 +2,15 @@ name: Mark stale issues and pull requests
 
 on:
   schedule:
-  - cron: "* * * * *"
+  - cron: "*/5 * * * *"
 
-name: Check links every thursday
 jobs:
-  linkChecker:
+  cronLinkChecker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Link Checker
         uses: lycheeverse/lychee-action@master
-        with:
         with:
           args: --exclude="^(javascript|chrome):.*"  --accept=200,403,429 "https://lenisha.github.io/linkchecker-test/**/*.html"
         env:
