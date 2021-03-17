@@ -16,7 +16,7 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@master
         with:
-          args: --exclude="^(javascript|chrome):.*"   --accept=200,403,429  "**/*.html" 
+          args: --exclude="^(javascript|chrome):.*"   --accept=200,403,429  "index.html" 
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Create Issue From File
