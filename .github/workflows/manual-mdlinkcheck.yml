@@ -27,5 +27,4 @@ jobs:
       with:
         use-quiet-mode: 'yes'
         file-extension: 'md'
-        folder-path: 'website/content'
-        folder-path: 'website/content'
+        folder-path: '.'
