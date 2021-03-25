@@ -25,4 +25,5 @@ jobs:
       - uses: JustinBeckwith/linkinator-action@v1
         with:
           recurse: true
-          paths: "**/*.md"
+          paths: "**/*.md,**/*.html"
+          verbosity: 'ERROR'
