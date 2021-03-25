@@ -27,3 +27,4 @@ jobs:
           recurse: true
           paths: "**/*.md,**/*.html"
           verbosity: 'ERROR'
+          directoryListing: true
